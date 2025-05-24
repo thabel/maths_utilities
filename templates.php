@@ -85,3 +85,23 @@ function solveEquation($a1,$m1,$a2,$m2){
         return [FALSE, "The two moduli are not coprime"];
     }
 }
+
+function solveCRTEquation($conditions){
+    try{
+        if(count($conditions) == 1){
+            return [true , $conditions[0]["a"]%($conditions[0]["m"]) ];
+        }
+        else{
+            $slice = array_slice($conditions, 0, 2);
+            [$isFound,$result]= solveEquation($slice[0]["a"],$slice[0]["m"],$slice[1]["a"],$slice[1]["m"]);
+            if(!$isFound)
+                return [$isFound,$result];
+            $reminder = array_slice($conditions,2);
+            array_push($reminder,["a"=>$result , "m"=>($slice[0]["m"]*$slice[1]["m"])  ]);
+
+            return solveCRTEquation($reminder);
+        }
+    } catch (Exception $e) {
+        return [false, "An error occurred: " . $e->getMessage()];
+    }
+};

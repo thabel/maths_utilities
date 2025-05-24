@@ -1,26 +1,33 @@
-<form action="index.php?tool=crt#result" method="post">
-  <div class="num-and-modulus">
-    <div class="input-group">
-      <label for="a1">a₁:</label>
-      <input type="number" id="a1" name="a1" value="<?= htmlspecialchars($_POST['a1'] ?? '2') ?>" required>
+<?php
+// Grab submitted values or default to 2 empty conditions
+$conditions = $_POST['conditions'] ?? [
+    ['a' => '2', 'm' => '4'],
+    ['a' => '1', 'm' => '7'],
+];
+if (!is_array($conditions)) $conditions = []; // safety fallback
+?>
+
+<form id="crtForm" action="index.php?tool=crt#result" method="post">
+
+  <div id="conditions-container">
+    <?php foreach ($conditions as $i => $cond): ?>
+    <div class="num-and-modulus" data-index="<?= $i ?>">
+      <div class="input-group">
+        <label for="a<?= $i ?>">a<span class="small"><?= $i + 1 ?>:</span>  
+        </label>
+        <input type="number" id="a<?= $i ?>" name="conditions[<?= $i ?>][a]" value="<?= htmlspecialchars($cond['a']) ?>" required>
+      </div>
+
+      <div class="input-group">
+        <label for="m<?= $i ?>">(mod) m<span class="small"><?= $i + 1 ?>:</span>  
+        </label>
+        <input type="number" id="m<?= $i ?>" name="conditions[<?= $i ?>][m]" value="<?= htmlspecialchars($cond['m']) ?>" required>
+      </div>
+      <button type="button" class="remove-condition m-0 bg-color-red-500" <?= count($conditions) <= 2 ? 'disabled' : '' ?>>Remove</button>
     </div>
-    <div class="input-group">
-      <label for="m1">(mod) m₁:</label>
-      <input type="number" id="m1" name="m1" value="<?= htmlspecialchars($_POST['m1'] ?? '4') ?>" required>
-    </div>
+    <?php endforeach; ?>
   </div>
 
-  <div class="num-and-modulus">
-    <div class="input-group">
-      <label for="a2">a₂:</label>
-      <input type="number" id="a2" name="a2" value="<?= htmlspecialchars($_POST['a2'] ?? '1') ?>" required>
-    </div>
-    <div class="input-group">
-      <label for="m2">(mod) m₂:</label>
-      <input type="number" id="m2" name="m2" value="<?= htmlspecialchars($_POST['m2'] ?? '7') ?>" required>
-    </div>
-  </div>
-
+  <button type="button" id="add-condition">Add condition</button>
   <button type="submit">Calculate</button>
 </form>
-

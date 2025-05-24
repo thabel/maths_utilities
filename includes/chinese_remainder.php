@@ -42,16 +42,13 @@ x ≡ aₙ (mod mₙ)
          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // The form was submitted via POST
     // Access your form data like this:
-    $a1 = $_POST['a1'] ?? null;
-    $m1 = $_POST['m1'] ?? null;
-    $a2 = $_POST['a2'] ?? null;
-    $m2 = $_POST['m2'] ?? null;
-
+  
+    $conditions = $_POST['conditions'] ?? [];
     // You can now process the values or validate them
     // Example: echo result or run CRT logic
-    if ($a1 && $m1 && $a2 && $m2) {
+    if (count($conditions) >= 2) {
         // Call your function to solve the CRT
-        [$isFound,$result] = solveEquation($a1, $m1, $a2, $m2);
+        [$isFound,$result] = solveCRTEquation($conditions);
         if ($isFound) {
             echo "<p>The solution is: x = $result</p>";
         } else {

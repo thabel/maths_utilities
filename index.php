@@ -19,5 +19,7 @@ sl_template_render_header();
 <?php sl_template_render_footer(); ?>
   </main>
 </div>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

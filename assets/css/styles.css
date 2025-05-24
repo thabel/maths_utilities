@@ -282,9 +282,11 @@ form .num-and-modulus{
 
   display: flex;
   gap: 4rem;
-  align-items: center;
-  
+  align-items: flex-end;
+  justify-content: center;
 }
+
+
 form .num-and-modulus input[type="number"]{
   width: 100%;
 }
@@ -304,4 +306,18 @@ form .num-and-modulus input[type="number"]{
   font-size: 1rem;                /* Readable font size */
   border-radius: 4px;             /* Slightly rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.small{
+  font-size: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+.color-red-500{
+  color: var(--red-500);
+}
+.remove-condition.bg-color-red-500{
+  background-color: var(--red-500);
+  color: var(--white);
+  border-radius: 4px;
 }
