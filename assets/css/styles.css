@@ -1,0 +1,307 @@
+/*Styles*/
+
+/**
+ * Base styles
+ */
+/*Box sizing*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+    /* color: var(--white); */
+    text-decoration: underline;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--gray-900);
+  background-color: var(--white);
+}
+/*Reset*/
+:root {
+/*Fonts size*/
+  --font-size: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+
+  /* Colors */
+      --white: #fff;
+    --black: #000;
+    --gray-50: #f9f9f9;
+    --gray-100: #ececec;
+    --gray-200: #e3e3e3;
+    --gray-300: #cdcdcd;
+    --gray-400: #b4b4b4;
+    --gray-500: #9b9b9b;
+    --gray-600: #676767;
+    --gray-700: #424242;
+    --gray-750: #2f2f2f;
+    --gray-800: #212121;
+    --gray-900: #171717;
+    --gray-950: #0d0d0d;
+    --red-500: #e02e2a;
+    --red-700: #911e1b;
+    --brand-purple: #ab68ff;
+    --yellow-900: #4d3b00;
+    --blue-brand:#68aaff;
+  /* */
+      --sidebar-surface-primary: var(--gray-50);
+    --sidebar-surface-secondary: var(--gray-100);
+    --sidebar-surface-tertiary: var(--gray-200);
+}
+.color-yellow-900{
+    color: var(--yellow-900);
+}
+.root{
+    display: grid;
+     grid-template-columns: 250px 1fr; /* Sidebar + main content */
+}
+main.main-container{
+  display: flex;
+  flex-direction: column;
+}
+/* side bar  */
+.sidebar {
+     position: sticky;
+  top: 0;
+  height: 100vh;
+  background: var(--sidebar-surface-primary);
+  overflow-y: auto;
+  /* color: var(--white); */
+}
+
+
+.sidebar ul {
+  list-style: none;
+  gap:1rem;
+  
+}
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+header.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: var(--gray-900);
+    color: var(--white);
+}
+.main-header nav ul{
+    
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.m-0{
+    margin: 0;
+}
+div.content-after-main-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+article {
+    padding:2rem ;
+    font-size: 1.18rem;
+}
+
+article ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+article ul .card{
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article ul .card p{
+  margin: 0;
+  padding: 0;
+}
+article ul .card a{
+  color: var(--blue-brand);
+}
+.color-blue-brand{
+  color: var(--blue-brand);
+}
+.here{
+  text-decoration: underline;
+}
+
+footer {
+  background: var(--gray-900);
+  color: white;
+  text-align: center;
+
+  width: 100%;
+}
+
+article p,pre{
+  margin: 0;
+  padding: 0;
+}
+
+.grid-column{
+
+  grid-template-columns: 1fr;
+  gap:0;
+}
+
+/*forms*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="color"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  font-size: var(--font-size);
+  color: var(--gray-900);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--blue-brand);
+  box-shadow: 0 0 5px var(--blue-brand);
+}
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--blue-brand);
+}
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--blue-brand);
+}
+input[type="checkbox"]:checked::after,
+input[type="radio"]:checked::after {
+  content: '';
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--white);
+}
+input[type="submit"],
+input[type="button"],
+button {
+  background-color: var(--blue-brand);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size);
+  cursor: pointer;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+  background-color: var(--blue-brand);
+  box-shadow: 0 0 5px var(--blue-brand);
+}
+input[type="submit"]:active,
+input[type="button"]:active,
+button:active {
+  background-color: var(--blue-brand);
+  box-shadow: 0 0 5px var(--blue-brand);
+}
+input[type="submit"]:disabled,
+input[type="button"]:disabled,
+button:disabled {
+  background-color: var(--gray-300);
+  cursor: not-allowed;
+}
+form{
+  margin: 0 auto;
+}
+form  button{
+  margin: 1rem 0;
+}
+form .num-and-modulus{
+
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  
+}
+form .num-and-modulus input[type="number"]{
+  width: 100%;
+}
+#solve_crt{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+#result p {
+  background-color: #f0f8ff;      /* Light blue background */
+  color: #333;                    /* Dark text for readability */
+  padding: 12px 16px;             /* Some spacing inside */
+  border-left: 4px solid #ab68ff;/* Highlight with your blue tone */
+  margin-top: 16px;               /* Space from elements above */
+  font-size: 1rem;                /* Readable font size */
+  border-radius: 4px;             /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
