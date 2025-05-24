@@ -321,3 +321,89 @@ form .num-and-modulus input[type="number"]{
   color: var(--white);
   border-radius: 4px;
 }
+
+/*About page*/
+.about-article {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+.about-article h2, .about-article h3 {
+  color: #0057b8;
+  margin-top: 1.5rem;
+}
+
+.about-article ul {
+  padding-left: 1.2rem;
+}
+
+.about-article ul li {
+  margin-bottom: 0.5rem;
+}
+
+.about-article a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.about-article a:hover {
+  text-decoration: underline;
+}
+
+
+.contact-article {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.07);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+}
+
+.contact-article h2 {
+  color: #0057b8;
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #0057b8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #004494;
+}

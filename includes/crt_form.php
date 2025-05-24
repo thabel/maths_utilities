@@ -2,7 +2,7 @@
 // Grab submitted values or default to 2 empty conditions
 $conditions = $_POST['conditions'] ?? [
     ['a' => '2', 'm' => '4'],
-    ['a' => '1', 'm' => '7'],
+    ['a' => '6', 'm' => '7'],
 ];
 if (!is_array($conditions)) $conditions = []; // safety fallback
 ?>

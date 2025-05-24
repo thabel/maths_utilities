@@ -2,7 +2,7 @@
   <h2>Chinese Remainder Theorem</h2>
   <p>
     The Chinese Remainder Theorem (CRT) is a fundamental result in number theory that allows for solving systems of simultaneous congruences with pairwise coprime moduli.
-    <a href="#solve_crt" class="color-blue-brand">Solve Chinese Remainder Theorem</a>
+    <a href="#solve_crt" class="color-blue-brand">Try Solve Chinese Remainder Theorem system</a>
   </p>
   <h3>Problem Statement</h3>
   <p>
